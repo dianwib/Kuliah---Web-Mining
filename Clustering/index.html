@@ -1,0 +1,971 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A Material Design theme for MkDocs">
+      
+      
+        <link rel="canonical" href="https://dianwib.github.io/Clustering/">
+      
+      
+        <meta name="author" content="Martin Donath">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Clustering - Dian Wibowo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "None", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#clustering" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://dianwib.github.io/" title="Dian Wibowo" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Dian Wibowo
+            </span>
+            <span class="md-header-nav__topic">
+              Clustering
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/dianwib" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    dianwib
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="Home" class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://dianwib.github.io/" title="Dian Wibowo" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Dian Wibowo
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/dianwib" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    dianwib
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../crawling/" title="Crawling" class="md-nav__link">
+      Crawling
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../text_prepocessing/" title="Text Prepocessing" class="md-nav__link">
+      Text Prepocessing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../vector_space_model/" title="Vector Space Model" class="md-nav__link">
+      Vector Space Model
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Seleksi Fitur/" title="Seleksi Fitur" class="md-nav__link">
+      Seleksi Fitur
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Clustering
+      </label>
+    
+    <a href="./" title="Clustering" class="md-nav__link md-nav__link--active">
+      Clustering
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pengertian" title="Pengertian" class="md-nav__link">
+    Pengertian
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metode" title="Metode" class="md-nav__link">
+    Metode
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-mean-clustering" title="K-mean Clustering" class="md-nav__link">
+    K-mean Clustering
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tahapan-k-mean" title="Tahapan K-mean" class="md-nav__link">
+    Tahapan K-mean
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silhoutte-coefisient" title="Silhoutte Coefisient" class="md-nav__link">
+    Silhoutte Coefisient
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tahapan-silhoutte" title="Tahapan Silhoutte" class="md-nav__link">
+    Tahapan Silhoutte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementasi" title="Implementasi" class="md-nav__link">
+    Implementasi
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clustering-k-mean-dengan-total-corpus-total-fitur-asli" title="Clustering K-mean dengan total corpus (total fitur) asli." class="md-nav__link">
+    Clustering K-mean dengan total corpus (total fitur) asli.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-k-mean-feature-selection-random-forest" title="Clustering (K-mean) + Feature Selection (Random Forest)." class="md-nav__link">
+    Clustering (K-mean) + Feature Selection (Random Forest).
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-k-mean-feature-selection-chi-square" title="Clustering (K-mean) + Feature Selection (Chi Square)." class="md-nav__link">
+    Clustering (K-mean) + Feature Selection (Chi Square).
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-based-ranking-model-random-forest" title="Model Based Ranking model Random Forest" class="md-nav__link">
+    Model Based Ranking model Random Forest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mencari-n-pca-yang-memiliki-nilai-silhoute-terbaik" title="Mencari n-PCA yang memiliki nilai  silhoute terbaik" class="md-nav__link">
+    Mencari n-PCA yang memiliki nilai  silhoute terbaik
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Evaluasi/" title="Evaluasi" class="md-nav__link">
+      Evaluasi
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pengertian" title="Pengertian" class="md-nav__link">
+    Pengertian
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metode" title="Metode" class="md-nav__link">
+    Metode
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-mean-clustering" title="K-mean Clustering" class="md-nav__link">
+    K-mean Clustering
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tahapan-k-mean" title="Tahapan K-mean" class="md-nav__link">
+    Tahapan K-mean
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silhoutte-coefisient" title="Silhoutte Coefisient" class="md-nav__link">
+    Silhoutte Coefisient
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tahapan-silhoutte" title="Tahapan Silhoutte" class="md-nav__link">
+    Tahapan Silhoutte
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementasi" title="Implementasi" class="md-nav__link">
+    Implementasi
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clustering-k-mean-dengan-total-corpus-total-fitur-asli" title="Clustering K-mean dengan total corpus (total fitur) asli." class="md-nav__link">
+    Clustering K-mean dengan total corpus (total fitur) asli.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-k-mean-feature-selection-random-forest" title="Clustering (K-mean) + Feature Selection (Random Forest)." class="md-nav__link">
+    Clustering (K-mean) + Feature Selection (Random Forest).
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-k-mean-feature-selection-chi-square" title="Clustering (K-mean) + Feature Selection (Chi Square)." class="md-nav__link">
+    Clustering (K-mean) + Feature Selection (Chi Square).
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-based-ranking-model-random-forest" title="Model Based Ranking model Random Forest" class="md-nav__link">
+    Model Based Ranking model Random Forest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mencari-n-pca-yang-memiliki-nilai-silhoute-terbaik" title="Mencari n-PCA yang memiliki nilai  silhoute terbaik" class="md-nav__link">
+    Mencari n-PCA yang memiliki nilai  silhoute terbaik
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="clustering">Clustering<a class="headerlink" href="#clustering" title="Permanent link">&para;</a></h1>
+<h2 id="pengertian">Pengertian<a class="headerlink" href="#pengertian" title="Permanent link">&para;</a></h2>
+<p>Merupakan proses pengelompokan data menjadi sebuah beberapa kelompok baru, pengelompokan tersebut bisa berdasarkan beberapa ciri yang mirip antar data. Dalam kasus ini ciri yang mirip bisa kita ketahui dari kata yang menjadi ciri dari setiap data / dokumen.</p>
+<h2 id="metode">Metode<a class="headerlink" href="#metode" title="Permanent link">&para;</a></h2>
+<h3 id="k-mean-clustering">K-mean Clustering<a class="headerlink" href="#k-mean-clustering" title="Permanent link">&para;</a></h3>
+<p>K-mean Clustering merupakan salah satu algoritma untuk melakukan clustering. Fungsi algoritma ini yaitu untuk membagi data menjadi beberapa kelompok berdasarkan class inputan yang diterima / jumlah kelompok (cluster) yang diinginkan. Algoritma ini akan mengelompokkan data atau objek ke dalam adalah data atau objek kedalam setiap class <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<h4 id="tahapan-k-mean">Tahapan K-mean<a class="headerlink" href="#tahapan-k-mean" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Menentukan jumlah cluster</p>
+</li>
+<li>
+<p>Memilih K buah titik <em>centroid</em> secara random / acak sebanyak jumlah cluster yang diinginkan pada sebelumnya </p>
+</li>
+<li>
+<p>Mengelompokkan data sehingga terbentuk K buah <em>cluster</em> dengan titik <em>centroid</em> dari setiap <em>cluster</em> merupakan titik <em>centroid</em> yang telah dipilih sebelumnya</p>
+</li>
+<li>
+<p>Memerbaharui nilai titik <em>centroid</em></p>
+</li>
+<li>
+<p>Mengulangi langkah 3 dan 4 sampai nilai dari titik <em>centroid</em> tidak lagi berubah atau tidak ada perubahan objek pada setiap class</p>
+</li>
+</ol>
+<div class="codehilite"><pre><span></span>    clusterer = KMeans(n_clusters=n_cluster)
+    preds = clusterer.fit_predict((df))
+    centers = clusterer.cluster_centers_
+</pre></div>
+
+<p>n_cluster menyatakan banyaknya cluster</p>
+<blockquote>
+<p>*dalam kasus ini penulis menggunakan metode "euclidean distance" dalam menghitung jarak setiap objek dengan centeroid.</p>
+</blockquote>
+<h3 id="silhoutte-coefisient">Silhoutte Coefisient<a class="headerlink" href="#silhoutte-coefisient" title="Permanent link">&para;</a></h3>
+<p>Silhoutte Coefisient merupakan salah satu metode yang dilakukan setelah melakukan clustering. Tujuan dari metode ini adalah untuk melihat seberapa cocok data dengan cluster<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<h4 id="tahapan-silhoutte">Tahapan Silhoutte<a class="headerlink" href="#tahapan-silhoutte" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Mencari rata-rata jarak objek i dengan objek lainnya di dalam satu cluster <strong>(ai)</strong>.</p>
+</li>
+<li>
+<p>Mencari rata-rata jarak objek i dengan objek lainnya di seluruh cluster lain, setelah menghitung semuanya, lalu pilih nilai terkecil dari seluruh jarak ke cluster lain <strong>(bi)</strong>.</p>
+</li>
+<li>
+<p>Setelah itu hitung menggunakan rumus berikut</p>
+</li>
+</ol>
+<p><a href="../assets/images/WEecm.png"><img alt="Material for MkDocs" src="../assets/images/WEecm.png" /></a></p>
+<div class="codehilite"><pre><span></span>score = silhouette_score(df, preds, metric=&#39;euclidean&#39;)
+</pre></div>
+
+<blockquote>
+<p>*perlu diketahui bahwa nilai silhoutte berada pada rentan angka antara -1 sampai 1, dan hasil sebuah clustering dikatan bagus jika nilai silhoutte nya mendekati angka 1.</p>
+</blockquote>
+<h2 id="implementasi">Implementasi<a class="headerlink" href="#implementasi" title="Permanent link">&para;</a></h2>
+<h3 id="clustering-k-mean-dengan-total-corpus-total-fitur-asli">Clustering K-mean dengan total corpus (total fitur) asli.<a class="headerlink" href="#clustering-k-mean-dengan-total-corpus-total-fitur-asli" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>banyak_cluster = list(range(2, 150))
+for n_cluster in banyak_cluster:
+    clusterer = KMeans(n_clusters=n_cluster)
+    preds = clusterer.fit_predict((df))
+
+    centers = clusterer.cluster_centers_
+    score = silhouette_score(df, preds, metric=&#39;euclidean&#39;)
+    temp.append(score)
+    temp_pred.append(preds)
+
+    # print (&quot;Untuk kluster={},silhoute score :{} &quot;.format(n_cluster, repr(score)))
+    # print(preds)
+
+print (&quot;kluster terbaik&quot;)
+print (&quot;kluster ke &gt; &quot; + str(temp.index(max(temp)) + 2) + &quot; &gt;silhout&gt; &quot; + str(max(temp)))
+</pre></div>
+
+<p>code diatas digunakan untuk melakukan proses clustering menggunakan metode <em>K-mean clustering</em>  menggunakan <em>euclidean</em> serta menghitung nilai <em>silhoutte</em> pada setiap cluster dengan menggunakan total corpus asli sebanyak kurang lebih 2000, untuk selanjutnya menampilkan nilai <em>silhoutte</em> terbaik</p>
+<p>pada cluster tertentu.</p>
+<blockquote>
+<p>*file tribunnews_KmeanSeleksiFitur(RFE,UFS,BasedRanking).py</p>
+</blockquote>
+<h3 id="clustering-k-mean-feature-selection-random-forest">Clustering (K-mean) + Feature Selection (Random Forest).<a class="headerlink" href="#clustering-k-mean-feature-selection-random-forest" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>def RFE(cek, n_ranking):
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.feature_selection import RFE
+        rfe = RFE(RandomForestClassifier(n_estimators=50), n_features_to_select=1)
+    rfe.fit(X, y)
+    scores = []
+    for i in range(num_features):
+        scores.append((rfe.ranking_[i], X.columns[i]))
+
+    print (sorted(scores, reverse=True))
+    print_best_worst(scores, n_ranking)
+</pre></div>
+
+<p>code diatas digunakan untuk melakukan proses seleksi fitur menggunakan metode <em>Random Forest</em> menggunakan n_estimator pohon keputusan sebanyak 50 pohon.</p>
+<h3 id="clustering-k-mean-feature-selection-chi-square">Clustering (K-mean) + Feature Selection (Chi Square).<a class="headerlink" href="#clustering-k-mean-feature-selection-chi-square" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>def UFS(cek, n_ranking):
+    from sklearn.feature_selection import SelectKBest
+    from sklearn.feature_selection import chi2, mutual_info_classif
+        print (&quot;UFS (Univariate Feature Selection) model chi^2 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;)
+        test = SelectKBest(score_func=chi2, k=2)
+    test.fit(X, y)
+    scores = []
+    for i in range(num_features):
+        score = test.scores_[i]
+        scores.append((score, X.columns[i]))
+
+    print (sorted(scores, reverse=True))
+    print_best_worst(scores, n_ranking)
+</pre></div>
+
+<p>code diatas digunakan untuk melakukan proses seleksi fitur menggunakan metode <em>Chi Square</em>.</p>
+<blockquote>
+<p>*file tribunnews_KmeanSeleksiFitur(RFE,UFS,BasedRanking).py</p>
+</blockquote>
+<h3 id="model-based-ranking-model-random-forest">Model Based Ranking model Random Forest<a class="headerlink" href="#model-based-ranking-model-random-forest" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>def RandomForest():
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.model_selection import cross_val_score
+    clf = RandomForestClassifier(n_estimators=50, max_depth=4)
+    scores = []
+    num_features = len(X.columns)
+    for i in range(num_features):
+        col = X.columns[i]
+        score = np.mean(cross_val_score(clf, X[col].values.reshape(-1, 1), y, cv=10))
+        scores.append((int(score * 100), col))
+        print (&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;)
+        print (i, &quot;&gt;&quot;, col, &quot;score:&quot;, score)
+</pre></div>
+
+<p>code diatas digunakan untuk melakukan proses perankingan seluruh fitur menggunakan metode <em>Random Forest</em> dengan menggunakan 50 tree decision. Tujuan perankingan sendiri adalah untuk melihat seluruh fitur yang memiliki nilai lebih / fitur yang paling berpengaruh.</p>
+<div class="codehilite"><pre><span></span>    scores = sorted(scores, reverse=True)
+    print (&quot;Random Forest&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;)
+    print(&quot;The 5 best features selected by this method are :&quot;)
+    for i in range(5):
+        print(scores[i][1])
+</pre></div>
+
+<p>code diatas digunakan untuk menampilkan 5 fitur ranking teratas .</p>
+<blockquote>
+<p>*file tribunnews_KmeanSeleksiFitur(RFE,UFS,BasedRanking).py</p>
+</blockquote>
+<h3 id="mencari-n-pca-yang-memiliki-nilai-silhoute-terbaik">Mencari n-PCA yang memiliki nilai  silhoute terbaik<a class="headerlink" href="#mencari-n-pca-yang-memiliki-nilai-silhoute-terbaik" title="Permanent link">&para;</a></h3>
+<p>Mencari berapa jumlah PCA yang memiliki nilai silhoutte terbaik dalam melakukan clustering dengan total corpus (total data) asli sebanyak 1099 fitur.</p>
+<div class="codehilite"><pre><span></span>banyak_pca = list(range(3, 150))
+dict_temp={}
+temp_kluster=[]
+temp_silhout=[]
+for n_pca in banyak_pca:
+</pre></div>
+
+<p>code diatas digunakan untuk melakukan proses looping banyaknya PCA yang akan digunakan yang di mulai dari 3 sampai 149.</p>
+<div class="codehilite"><pre><span></span>dataframe = pd.read_csv(&#39;baru_tfidv.csv&#39;, encoding=&#39;utf-8&#39;, skiprows=0, index_col=0, sep=&#39;,&#39;)
+df = dataframe.copy(deep=True)
+pca = PCA(n_components=n_pca)
+principalcomponent = pca.fit_transform(df)
+kolom=[]
+for i in range(n_pca):
+    kolom.append(&quot;PCA&quot;+str(i+1))
+principaldf = pd.DataFrame(data=principalcomponent, columns=kolom)
+new_csv = principaldf.to_csv(&#39;baru_withpca.csv&#39;)
+dataframe = pd.read_csv(&#39;baru_withpca.csv&#39;, encoding=&#39;utf-8&#39;, skiprows=0, index_col=0, sep=&#39;,&#39;)
+
+df = dataframe.copy(deep=True)
+</pre></div>
+
+<p>code diatas digunakan untuk melakukan perhitungan setiap looping (banyak) PCA diatas tadi.</p>
+<div class="codehilite"><pre><span></span>banyak_cluster = list(range(2, 150))
+temp = []
+temp2=[]
+for n_cluster in banyak_cluster:
+    clusterer = KMeans(n_clusters=n_cluster)
+    preds = clusterer.fit_predict((df))
+
+    centers = clusterer.cluster_centers_
+    score = silhouette_score(df, preds, metric=&#39;euclidean&#39;)
+    temp.append(score)
+
+    # print (&quot;Untuk kluster={},silhoute score :{} &quot;.format(n_cluster, repr(score)))
+    # print(preds)
+
+temp_besar=str(max(temp))
+temp_index_besar = str(temp.index(max(temp)) + 2)
+
+dict_temp[n_pca]={&quot;kluster&quot;:temp_index_besar,&quot;silhout&quot;:temp_besar}
+print(&quot;PCA &gt; &quot;,n_pca,&quot; terbaik pada &quot;,dict_temp[n_pca])
+temp_kluster.append(dict_temp[n_pca][&quot;kluster&quot;])
+temp_silhout.append((dict_temp[n_pca][&quot;silhout&quot;]))
+</pre></div>
+
+<p>code diatas digunakan untuk melakukan proses clustering menggunakan metode <em>K-mean clustering</em>  menggunakan <em>euclidean</em> dengan menggunakan jumlah fitur sebanyak looping PCA diatas tadi, serta menghitung dan mencari setiap nilai silhoutte terbaiknya pada setiap cluster.</p>
+<div class="codehilite"><pre><span></span>baru=pd.DataFrame(columns=[&#39;n_PCA&#39;,&#39;kluster&#39;,&#39;silhout&#39;])
+baru[&#39;n_PCA&#39;]=banyak_pca
+baru[&#39;kluster&#39;]=temp_kluster
+baru[&#39;silhout&#39;]=temp_silhout
+print (baru.head())
+
+baru.to_csv(&#39;klustering_allPCA.csv&#39;)
+</pre></div>
+
+<p>code diatas digunakan untuk melakukan proses  penyimpanan nilai PCA, silhoutte, dan cluster ke format file (.csv) untuk mempermudah melakukan analisis data.</p>
+<blockquote>
+<p>*file tribunnews_kmeanwithAllPCA.py</p>
+<p>*setelah file selesai di running maka akan membentuk file .csv baru</p>
+</blockquote>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="http://depandienda.it.student.pens.ac.id/file/kmeans_references.pdf">http://depandienda.it.student.pens.ac.id/file/kmeans_references.pdf</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.researchgate.net/publication/323365687_Algoritme_Genetika_Untuk_Optimasi_K-Means_Clustering_Dalam_Pengelompokan_Data_Tsunami">https://www.researchgate.net/publication/323365687_Algoritme_Genetika_Untuk_Optimasi_K-Means_Clustering_Dalam_Pengelompokan_Data_Tsunami</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Seleksi Fitur/" title="Seleksi Fitur" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Seleksi Fitur
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Evaluasi/" title="Evaluasi" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Evaluasi
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2019 Martin Donath
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="http://struct.cc" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/squidfunk" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/squidfunk" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/squidfunk" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.48c2c9de.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

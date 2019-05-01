@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+     <loc>https://dianwib.github.io/</loc>
+     <lastmod>2019-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://dianwib.github.io/crawling/</loc>
+     <lastmod>2019-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://dianwib.github.io/text_prepocessing/</loc>
+     <lastmod>2019-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://dianwib.github.io/vector_space_model/</loc>
+     <lastmod>2019-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://dianwib.github.io/Seleksi Fitur/</loc>
+     <lastmod>2019-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://dianwib.github.io/Clustering/</loc>
+     <lastmod>2019-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://dianwib.github.io/Evaluasi/</loc>
+     <lastmod>2019-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+</urlset>
