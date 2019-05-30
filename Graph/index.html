@@ -232,6 +232,16 @@
         
   <li class="md-tabs__item">
     
+      <a href=".." title="~Home~" class="md-tabs__link md-tabs__link--active">
+        ~Home~
+      </a>
+    
+  </li>
+
+      
+        
+  <li class="md-tabs__item">
+    
       <a href="../1/" title="1. ~Web Content Mining~" class="md-tabs__link md-tabs__link--active">
         1. ~Web Content Mining~
       </a>
@@ -254,7 +264,7 @@
         
   <li class="md-tabs__item">
     
-      <a href=".." title="2. ~Web Structure Mining~" class="md-tabs__link md-tabs__link--active">
+      <a href="../2/" title="2. ~Web Structure Mining~" class="md-tabs__link md-tabs__link--active">
         2. ~Web Structure Mining~
       </a>
     
@@ -309,6 +319,18 @@
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="~Home~" class="md-nav__link">
+      ~Home~
+    </a>
+  </li>
+
     
       
       
@@ -400,7 +422,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="2. ~Web Structure Mining~" class="md-nav__link">
+    <a href="../2/" title="2. ~Web Structure Mining~" class="md-nav__link">
       2. ~Web Structure Mining~
     </a>
   </li>
@@ -451,6 +473,26 @@
     Graph
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pengertian" title="Pengertian" class="md-nav__link">
+    Pengertian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" title="Code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -499,6 +541,26 @@
     Graph
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pengertian" title="Pengertian" class="md-nav__link">
+    Pengertian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" title="Code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -521,13 +583,52 @@
                   <h1>2.2 Graph</h1>
                 
                 <h2 id="graph">Graph<a class="headerlink" href="#graph" title="Permanent link">&para;</a></h2>
-<p>​                                                                                                                                                                                                                                                                                                                                                                                                                                                   Graph adalah sebuah struktur data yang bersifat non linear, di dalam sebuah graph terdapat sebuah objek yang dikenal sebagai "Node" dan jalur atau hubungan antar objek yang dikenal "Edge". Node biasanya berbentuk lingkaran atau titik, dan edge berbentuk garis penghubung antara node satu ke node yang lain.</p>
+<h3 id="pengertian">Pengertian<a class="headerlink" href="#pengertian" title="Permanent link">&para;</a></h3>
+<p>​                                                                                                                                                                                                                                                                                                                                                                                                                                                   Graph adalah sebuah struktur data yang bersifat non linear, di dalam sebuah graph terdapat sebuah objek yang dikenal sebagai "Node" dan jalur atau hubungan antar objek yang dikenal "Edge". Node biasanya berbentuk lingkaran atau titik, dan edge berbentuk garis penghubung antara node satu ke node yang lain. Graph sering digunakan untuk merepresentasikan hubungan antar sebuah objek dengan objek lain<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <p><a href="../assets/images/graph.jpeg"><img alt="Material for MkDocs" src="../assets/images/graph.jpeg" /></a></p>
+<blockquote>
+<p><em>Trees are nothing more than restricted types of graphs, just with many more rules to follow . A tree will always be a graph, but not all graphs will be trees<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</em></p>
+</blockquote>
 <p>Didalam Web Structure Mining, Graph digunakan untuk merepresentasikan hubungan antara web satu ke web yang lain, dimana Node dapat diartikan sebagai Web Page sedangkan Edge diartikan sebagai hubungan yang merepresentasikan sumber dan tujuan hubungan antar Web Page. </p>
+<h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>import networkx as nx
+import matplotlib.pyplot as plt
+</pre></div>
+
+<blockquote>
+<p>Code diatas digunakan untuk mengimport beberapa library python</p>
+</blockquote>
+<div class="codehilite"><pre><span></span>g = nx.DiGraph()
+g.add_nodes_from(dict_link.keys())
+</pre></div>
+
+<blockquote>
+<p>Code diatas digunakan untuk inisialiasasi method pada library untuk membuat graph</p>
+</blockquote>
+<div class="codehilite"><pre><span></span>for k,v in dict_link.items():
+    g.add_edges_from(([(k,t) for t in v]))
+</pre></div>
+
+<blockquote>
+<p>Code diatas digunakan untuk mencari setiap node serta hubungan dengan node lain untuk selanjutnya di buat sebuah graph </p>
+</blockquote>
+<div class="codehilite"><pre><span></span>nx.draw(g, with_labels=True)
+plt.draw()
+plt.show()
+</pre></div>
+
+<blockquote>
+<p>Code diatas digunakan untuk menggambarkan atau menampilkan bentuk graph dalam format 2 dimensi </p>
+</blockquote>
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:"></li>
+<li id="fn:1">
+<p><a href="http://mti.binus.ac.id/2018/03/05/teori-graph-sejarah-dan-manfaatnya/">http://mti.binus.ac.id/2018/03/05/teori-graph-sejarah-dan-manfaatnya/</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://medium.com/basecs/a-gentle-introduction-to-graph-theory-77969829ead8">https://medium.com/basecs/a-gentle-introduction-to-graph-theory-77969829ead8</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
                 

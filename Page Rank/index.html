@@ -232,6 +232,16 @@
         
   <li class="md-tabs__item">
     
+      <a href=".." title="~Home~" class="md-tabs__link md-tabs__link--active">
+        ~Home~
+      </a>
+    
+  </li>
+
+      
+        
+  <li class="md-tabs__item">
+    
       <a href="../1/" title="1. ~Web Content Mining~" class="md-tabs__link md-tabs__link--active">
         1. ~Web Content Mining~
       </a>
@@ -254,7 +264,7 @@
         
   <li class="md-tabs__item">
     
-      <a href=".." title="2. ~Web Structure Mining~" class="md-tabs__link md-tabs__link--active">
+      <a href="../2/" title="2. ~Web Structure Mining~" class="md-tabs__link md-tabs__link--active">
         2. ~Web Structure Mining~
       </a>
     
@@ -309,6 +319,18 @@
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="~Home~" class="md-nav__link">
+      ~Home~
+    </a>
+  </li>
+
     
       
       
@@ -400,7 +422,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="2. ~Web Structure Mining~" class="md-nav__link">
+    <a href="../2/" title="2. ~Web Structure Mining~" class="md-nav__link">
       2. ~Web Structure Mining~
     </a>
   </li>
@@ -463,6 +485,60 @@
     Page Rank
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pengertian" title="Pengertian" class="md-nav__link">
+    Pengertian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" title="Code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" title="Output" class="md-nav__link">
+    Output
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph" title="Graph" class="md-nav__link">
+    Graph
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-rank_1" title="Page Rank" class="md-nav__link">
+    Page Rank
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kesimpulan" title="Kesimpulan" class="md-nav__link">
+    Kesimpulan
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -499,6 +575,60 @@
     Page Rank
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pengertian" title="Pengertian" class="md-nav__link">
+    Pengertian
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" title="Code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" title="Output" class="md-nav__link">
+    Output
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph" title="Graph" class="md-nav__link">
+    Graph
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-rank_1" title="Page Rank" class="md-nav__link">
+    Page Rank
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kesimpulan" title="Kesimpulan" class="md-nav__link">
+    Kesimpulan
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -521,6 +651,7 @@
                   <h1>2.3 Page Rank</h1>
                 
                 <h2 id="page-rank">Page Rank<a class="headerlink" href="#page-rank" title="Permanent link">&para;</a></h2>
+<h3 id="pengertian">Pengertian<a class="headerlink" href="#pengertian" title="Permanent link">&para;</a></h3>
 <p>PageRank merupakan sebuah algoritma yang telah dipatenkan yang berfungsi untuk menentukan situs web mana yang lebih penting atau populer. PageRank merupakan salah satu fitur utama mesin pencari Google dan diciptakan oleh pendirinya, Larry Page dan Sergey Brin yang merupakan mahasiswa Ph.D. Universitas Stanford<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <p><a href="../assets/images/pagerank.jpeg"><img alt="Material for MkDocs" src="../assets/images/pagerank.jpeg" /></a></p>
 <p>Algoritma Page Rank digunakan untuk pengambilan keputusan. Dalam project kali ini penulis akan membahas mengenai pencarian nilai masing-masing halaman yang tersedia pada sebuah website.</p>
@@ -565,6 +696,372 @@ Data tautan yang tersedia adalah kurang lebih sebagai berikut;</p>
 </tr>
 </tbody>
 </table>
+<h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>temp_rank=nx.pagerank(g,alpha=0.85,max_iter=500,tol=0.0001)
+</pre></div>
+
+<blockquote>
+<div class="codehilite"><pre><span></span>Code diatas digunakan untuk menghitung nilai peringkat node atau web dalam sebuah graph yang diinisialisasi sebelumnya. PageRank merupakan algoritma yang dirancang untuk memberi peringkat halaman web.
+
+Di dalam PageRank terdapat beberapa parameter sebagai berikut:
+1. g (graph) - merupakan variabel tempat menampung graph yang diinisialisasi sebelumnya dalam format tipe data dictionary .
+2. alpha (tipe float) - merupakan parameter yang menyatakan dumping untuk PageRank, secara default nilainya adalah 0.85.
+3. max_iter (tipe integer) - merupakan parameter yang menyatakan jumlah maksimum iterasi dalam pemecah nilai eigenvelue algoritma PageRank.
+4. tol (tipe float) - merupakan parameter yang menyatakan error toleransi kesalahan yang digunakan untuk memeriksa konvergensi dalam algoritma PageRank.
+</pre></div>
+
+</blockquote>
+<div class="codehilite"><pre><span></span>from operator import itemgetter
+a=1
+for k,v in sorted(temp_rank.items(),key=itemgetter(1),reverse=True):
+    print(&quot;ranking ke: &quot;,a,&quot; adalah website &gt;&gt; &quot;,k,&quot; : &quot;,v)
+    a+=1
+</pre></div>
+
+<blockquote>
+<p>Code diatas digunakan untuk melakukan sorting nilai pagerank setiap website dimulai dari yang paling tinggi ke rendah.</p>
+</blockquote>
+<h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
+<h4 id="graph">Graph<a class="headerlink" href="#graph" title="Permanent link">&para;</a></h4>
+<p><a href="../assets/images/outgraph1.png"><img alt="Material for MkDocs" src="../assets/images/outgraph1.png" /></a></p>
+<p>Dari hasil output di atas maka dapat kita jabarkan sebagai berikut ;</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Web Sumber</th>
+<th>Web Tujuan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
+<td><a href="https://bola.com/">https://bola.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://bola.net/">https://bola.net/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://merdeka.com/">https://merdeka.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://klikdokter.com/">https://klikdokter.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://fimela.com/">https://fimela.com/</a> , dll</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://bukalapak.com/">https://bukalapak.com/</a></td>
+<td><a href="https://fimela.com/">https://fimela.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://bintang.com/">https://bintang.com/</a>, dll</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://fimela.com/">https://fimela.com/</a></td>
+<td><a href="https://bukalapak.com/">https://bukalapak.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://klikdokter.com/">https://klikdokter.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a>, dll</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://klikdokter.com/">https://klikdokter.com/</a></td>
+<td><a href="https://otosia.com/">https://otosia.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://vidio.com/">https://vidio.com/</a> , dll</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://bola.com/">https://bola.com/</a></td>
+<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://fimela.com/">https://fimela.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://bola.net/">https://bola.net/</a></td>
+<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://bukalapak.com/">https://bukalapak.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://otosia.com/">https://otosia.com/</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://video.com/">https://video.com/</a></td>
+<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://bola.com/">https://bola.com/</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
+<td><a href="https://merdeka.com/">https://merdeka.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://otosia.com/">https://otosia.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://fimela.com/">https://fimela.com/</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="https://merdeka.com/">https://merdeka.com/</a></td>
+<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://bukalapak.com/">https://bukalapak.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://fimela.com/">https://fimela.com/</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://otosia.com/">https://otosia.com/</a></td>
+<td><a href="https://fimela.com/">https://fimela.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://bola.com/">https://bola.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://merdeka.com/">https://merdeka.com/</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="https://dream.co.id/">https://dream.co.id/</a></td>
+<td><a href="https://fimela.com/">https://fimela.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="https://famous.id/">https://famous.id/</a></td>
+<td><a href="https://dream.co.id/">https://dream.co.id/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://fimela.com/">https://fimela.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://bola.net/">https://bola.net/</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="https://brilio.net/">https://brilio.net/</a></td>
+<td><a href="https://klikdokter.com/">https://klikdokter.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://merdeka.com/">https://merdeka.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://fimela.com/">https://fimela.com/</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="https://vemale.com/">https://vemale.com/</a></td>
+<td><a href="https://fimela.com/">https://fimela.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://otosia.com/">https://otosia.com/</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="https://bintang.com/">https://bintang.com/</a></td>
+<td><a href="https://fimela.com/">https://fimela.com/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://dream.co.id/">https://dream.co.id/</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="page-rank_1">Page Rank<a class="headerlink" href="#page-rank_1" title="Permanent link">&para;</a></h3>
+<p><a href="../assets/images/outgraph2.png"><img alt="Material for MkDocs" src="../assets/images/outgraph2.png" /></a></p>
+<p>Kemudian berikut nilai page rank setiap website yang telah di sorting dari nilai tertinggi ke terendah ;</p>
+<table>
+<thead>
+<tr>
+<th>No Ranking</th>
+<th>Nama Website</th>
+<th>Nilai Page Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://fimela.com/">https://fimela.com/</a></td>
+<td>0.1456840</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
+<td>0.1004522</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
+<td>0.0791715</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://merdeka.com/">https://merdeka.com/</a></td>
+<td>0.0783266</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://bola.com/">https://bola.com/</a></td>
+<td>0.0690259</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://otosia.com/">https://otosia.com/</a></td>
+<td>0.0675186</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://dream.co.id/">https://dream.co.id/</a></td>
+<td>0.0675186</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://bola.net/">https://bola.net/</a></td>
+<td>0.0675186</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="https://famous.id/">https://famous.id/</a></td>
+<td>0.0675186</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://brilio.net/">https://brilio.net/</a></td>
+<td>0.0591964</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="https://bintang.com/">https://bintang.com/</a></td>
+<td>0.0516732</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="https://vidio.com/">https://vidio.com/</a></td>
+<td>0.0392166</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="https://bukalapak.com/">https://bukalapak.com/</a></td>
+<td>0.0392166</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="https://klikdokter.com/">https://klikdokter.com/</a></td>
+<td>0.0335185</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="https://vemale.com/">https://vemale.com/</a></td>
+<td>0.0335185</td>
+</tr>
+</tbody>
+</table>
+<h3 id="kesimpulan">Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permanent link">&para;</a></h3>
+<p>Dari hasil atas, maka dapat diketahui bahwa Website yang diaggap paling penting atau paling banyak di referensi adalah <strong><a href="https://fimela.com/">https://fimela.com/</a></strong>, dengan nilai Page Rank sebesar <strong>0.1456840</strong>.</p>
 <div class="footnote">
 <hr />
 <ol>
