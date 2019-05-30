@@ -511,21 +511,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#graph" title="Graph" class="md-nav__link">
-    Graph
+  <a href="#page-rank_1" title="Page Rank" class="md-nav__link">
+    Page Rank
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#page-rank_1" title="Page Rank" class="md-nav__link">
-    Page Rank
-  </a>
   
 </li>
         
@@ -601,21 +594,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#graph" title="Graph" class="md-nav__link">
-    Graph
+  <a href="#page-rank_1" title="Page Rank" class="md-nav__link">
+    Page Rank
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#page-rank_1" title="Page Rank" class="md-nav__link">
-    Page Rank
-  </a>
   
 </li>
         
@@ -722,256 +708,7 @@ for k,v in sorted(temp_rank.items(),key=itemgetter(1),reverse=True):
 <p>Code diatas digunakan untuk melakukan sorting nilai pagerank setiap website dimulai dari yang paling tinggi ke rendah.</p>
 </blockquote>
 <h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
-<h4 id="graph">Graph<a class="headerlink" href="#graph" title="Permanent link">&para;</a></h4>
-<p><a href="../assets/images/outgraph1.png"><img alt="Material for MkDocs" src="../assets/images/outgraph1.png" /></a></p>
-<p>Dari hasil output di atas maka dapat kita jabarkan sebagai berikut ;</p>
-<table>
-<thead>
-<tr>
-<th>No</th>
-<th>Web Sumber</th>
-<th>Web Tujuan</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
-<td><a href="https://bola.com/">https://bola.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://bola.net/">https://bola.net/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://merdeka.com/">https://merdeka.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://klikdokter.com/">https://klikdokter.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://fimela.com/">https://fimela.com/</a> , dll</td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="https://bukalapak.com/">https://bukalapak.com/</a></td>
-<td><a href="https://fimela.com/">https://fimela.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://bintang.com/">https://bintang.com/</a>, dll</td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="https://fimela.com/">https://fimela.com/</a></td>
-<td><a href="https://bukalapak.com/">https://bukalapak.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://klikdokter.com/">https://klikdokter.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a>, dll</td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="https://klikdokter.com/">https://klikdokter.com/</a></td>
-<td><a href="https://otosia.com/">https://otosia.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://vidio.com/">https://vidio.com/</a> , dll</td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="https://bola.com/">https://bola.com/</a></td>
-<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://fimela.com/">https://fimela.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="https://bola.net/">https://bola.net/</a></td>
-<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://bukalapak.com/">https://bukalapak.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://otosia.com/">https://otosia.com/</a></td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="https://video.com/">https://video.com/</a></td>
-<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://bola.com/">https://bola.com/</a></td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
-<td><a href="https://merdeka.com/">https://merdeka.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://otosia.com/">https://otosia.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://fimela.com/">https://fimela.com/</a></td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="https://merdeka.com/">https://merdeka.com/</a></td>
-<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://bukalapak.com/">https://bukalapak.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://fimela.com/">https://fimela.com/</a></td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="https://otosia.com/">https://otosia.com/</a></td>
-<td><a href="https://fimela.com/">https://fimela.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://bola.com/">https://bola.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://merdeka.com/">https://merdeka.com/</a></td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="https://dream.co.id/">https://dream.co.id/</a></td>
-<td><a href="https://fimela.com/">https://fimela.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://liputan6.com/">https://liputan6.com/</a></td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="https://famous.id/">https://famous.id/</a></td>
-<td><a href="https://dream.co.id/">https://dream.co.id/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://fimela.com/">https://fimela.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://bola.net/">https://bola.net/</a></td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="https://brilio.net/">https://brilio.net/</a></td>
-<td><a href="https://klikdokter.com/">https://klikdokter.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://merdeka.com/">https://merdeka.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://fimela.com/">https://fimela.com/</a></td>
-</tr>
-<tr>
-<td>14</td>
-<td><a href="https://vemale.com/">https://vemale.com/</a></td>
-<td><a href="https://fimela.com/">https://fimela.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://otosia.com/">https://otosia.com/</a></td>
-</tr>
-<tr>
-<td>15</td>
-<td><a href="https://bintang.com/">https://bintang.com/</a></td>
-<td><a href="https://fimela.com/">https://fimela.com/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://dream.co.id/">https://dream.co.id/</a></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="https://kapanlagi.com/">https://kapanlagi.com/</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="page-rank_1">Page Rank<a class="headerlink" href="#page-rank_1" title="Permanent link">&para;</a></h3>
+<h4 id="page-rank_1">Page Rank<a class="headerlink" href="#page-rank_1" title="Permanent link">&para;</a></h4>
 <p><a href="../assets/images/outgraph2.png"><img alt="Material for MkDocs" src="../assets/images/outgraph2.png" /></a></p>
 <p>Kemudian berikut nilai page rank setiap website yang telah di sorting dari nilai tertinggi ke terendah ;</p>
 <table>
